@@ -1,0 +1,59 @@
+header {
+  width:100%;
+  text-align: center;
+  background: url('../image/Manhattan\ kansas.jpg');
+  background-size: 100%;
+  background-position: center;
+  color: white;
+}
+a {
+  color: white;
+} 
+
+header a {  /* REMOVE THIS LATER */
+  color: blueviolet;
+}
+
+h1 {
+  font-size: 70px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h4, h6 {
+  color: blueviolet;
+}
+
+img {
+  margin: 40px 0px 0px 0px;
+  border: 7px solid white;
+  border-radius: 20px;
+  height: 200px;
+}
+ul {
+  padding: 10px;
+  background: rgba(0,0,0,0.5);
+}
+li {
+  display: inline;
+  padding: 0px 10px 0px 10px;
+}
+
+article {
+
+  /* font-size: 30px; */
+  max-width: 75%;
+  padding: 20px;
+  margin: 0px auto;
+}  
+@media (max-width: 500px) {
+  h1 {
+      font-size: 36px;
+  }
+  li {
+    display: block;
+    padding: 5px;
+  }
+}
