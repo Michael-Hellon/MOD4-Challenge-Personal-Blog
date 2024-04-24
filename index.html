@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <title>Michael's Blog Page</title>
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/form.css" />
   </head>
 
   <body>
     
       <header>
         <img src="./assets/images/Michael.jpg">
+        
+
           <h1>Michael's Blog</h1>
-          <ul>
-            <li><h4><a href="#">WHEN I click the light mode/dark mode toggle</a></h4></li>
-          
-          </ul>
+          <button onclick="myFunction()">☀️/ 🌑</button>
       </header>
     
 <!-- from here down flex box <article> (width 40% form 60%) -->
@@ -30,7 +30,7 @@
       </article>
       <section>
         <form>
-          <link rel="stylesheet" type="text/css" href="./assets/css/form.css" />
+          
     
           <h6>THIS IS THE FORM BELOW</br>All below in the right column</h6>
       
@@ -49,12 +49,16 @@
             <label for="blogContent">Content</label>
             <input type="text" name="blogContent" id="blogContent"/>
           </div>
-          <div id="sendIt"></div>
+          <div id="sendIt"> <!-- might have to move out of div, and leave in form,-->
+            
           <button id="submit">Submit</button>
         </form>
 
       </section>
    
+   <script src="./assets/js/logic.js"></script>
+   <script src="./assets/js/blog.js"></script>
+
   </body>
 </html>
 

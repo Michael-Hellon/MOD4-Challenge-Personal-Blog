@@ -1,9 +1,9 @@
 form {
-  
+  min-width: 500px;
   display: inline-block;
   /* Form outline */
   padding: 1em;
-  border: 3px solid purple;
+  border: 3px solid red;
   border-radius: 1em;
 }
   
@@ -28,14 +28,16 @@ input, text{
   
 input:focus, text:focus {
   /* Additional highlight for focused elements */
-  border-color: #000;
+  border-color: chartreuse;
+  justify-items: right;
 }
   
 text {
   /* Align multiline text fields with their labels */
-  vertical-align: top;
+  vertical-align: bottom;
   /* Provide space to type some text */
   height: 5em;
+
 }
   
 .button {
