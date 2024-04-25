@@ -20,6 +20,22 @@ const userNameSpan = document.querySelector('#userName');
 const blogTitleSpan = document.querySelector('#blogTitle');
 const blogContentSpan = document.querySelector('#blogContent');
 
+// // from 4-24 Local storage obj
+// submitButton.addEventListener('submit', function(event) {
+//   event.preventDefault();
+
+  // TODO: Create user object from submission
+//   const blogAuthor = {
+//     user: userName.value.trim(),
+//     title: blogTitle.value.trim(),
+//     content: blogContent.value.trim(),
+//   };
+
+// // TODO: Set new submission to local storage
+//   const blogUser = JSON.stringify(blogAuthor);
+//   localStorage.setItem("blogAuthor", blogUser);
+// });
+
 renderLastRegistered();
 
 function displayBlog(type, message) {
@@ -39,7 +55,8 @@ function renderLastRegistered() {
     blogContentSpan.textContent = blogContent;
 }
 
-submitButton.addEventListener('click', function (event) {
+
+submitButton.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const userName = document.querySelector('#userName').value;
@@ -55,7 +72,18 @@ submitButton.addEventListener('click', function (event) {
     } else {
       displayMessage('success', 'Blog created successfully!!!');
 
-      localStorage.setItem('userName', userName);
-      localStorage.setItem('blogTitle', blogTitle);
-      localStorage.setItem('blogContent', blogContent);
-})
+      // localStorage.setItem('userName', userName);
+      // localStorage.setItem('blogTitle', blogTitle);
+      // localStorage.setItem('blogContent', blogContent);
+
+      const blogAuthor = {
+        user: userName.value.trim(),
+        title: blogTitle.value.trim(),
+        content: blogContent.value.trim(),
+      };
+    
+    // TODO: Set new submission to local storage
+      const blogUser = JSON.stringify(blogAuthor);
+      localStorage.setItem("blogAuthor", blogUser);
+
+}});

@@ -10,54 +10,44 @@
 
   <body>
     
-      <header>
-        <img src="./assets/images/Michael.jpg">
-        
-
-          <h1>Michael's Blog</h1>
-          <button onclick="myFunction()">☀️/ 🌑</button>
-      </header>
+    <header>
+      <button onclick="myFunction()">☀️/ 🌑</button>
+      <h1>Michael's Blog</h1>
+    </header>
     
 <!-- from here down flex box <article> (width 40% form 60%) -->
-
+    <section class="container">
       <article>
-        <h6>GIVEN a personal blog
-        WHEN I load the app,
-        THEN I am presented with the landing page containing a form with labels and inputs for username, blog title, and blog content.</h>
-      
-      <h2>My First Blog Page (in left column)</h2>
+        <h2>My First Blog Page (in left column w/ my pic?)</h2>
 
       </article>
+
       <section>
-        <form>
-          
-    
-          <h6>THIS IS THE FORM BELOW</br>All below in the right column</h6>
-      
+        <form >
           <h2>Feel free to unwind,</br>What's on Your Mind</h2>
-          <h4>^^^ centered ^^^ </h4>
-      
-          <div class="input">
+              
+          <section class="input" >
             <label for="userName">User Name</label>
-            <input type="text" name="userName" id="userName"/>
-          </div>
-          <div class="input">
+            <input type="text" name="userName" id="userName" placeholder="Enter username here" />
+          </section>
+          <section class="input">
             <label for="blogTitle">Title</label>
-            <input type="text" name="blogTitle" id="blogTitle"/>
-          </div>
-          <div class="input">
+            <input type="text" name="blogTitle" id="blogTitle" placeholder="Enter blog title here" />
+          </section>
+          <section class="input">
             <label for="blogContent">Content</label>
-            <input type="text" name="blogContent" id="blogContent"/>
-          </div>
-          <div id="sendIt"> <!-- might have to move out of div, and leave in form,-->
-            
-          <button id="submit">Submit</button>
+            <input type="text" name="blogContent" id="blogContent" placeholder="Enter blog content here"/>
+          </section>
+
+          <input id="submit" type="submit"></input>
+
         </form>
 
       </section>
-   
-   <script src="./assets/js/logic.js"></script>
-   <script src="./assets/js/blog.js"></script>
+    </section>
+    <script src="./assets/js/logic.js"></script>
+    <script src="./assets/js/form.js"></script>
+    <script src="./assets/js/blog.js"></script>
 
   </body>
 </html>

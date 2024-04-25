@@ -1,10 +1,13 @@
 form {
   min-width: 500px;
-  display: inline-block;
-  /* Form outline */
+    /* Form outline */
   padding: 1em;
-  border: 3px solid red;
+  border: 3px solid purple;
   border-radius: 1em;
+}
+
+h2 {
+  text-align: center;
 }
   
 label {
@@ -13,6 +16,11 @@ label {
   justify-items: left;
   min-width: 100px;
   margin:10px;
+}
+.container .input {
+ 
+  margin:auto;
+  padding-left: 50px;
 }
   
 input, text{
@@ -24,12 +32,22 @@ input, text{
   box-sizing: border-box;
   /* Match form field borders */
   border: 2px solid black;
+  
 }
   
 input:focus, text:focus {
   /* Additional highlight for focused elements */
   border-color: chartreuse;
   justify-items: right;
+  background-color: whitesmoke ;
+}
+
+input[type=submit] {
+  margin-top: 1.5rem;
+  margin-left: 88px;
+  background-color: blueviolet;
+ 
+  text-align: center;
 }
   
 text {
@@ -37,20 +55,15 @@ text {
   vertical-align: bottom;
   /* Provide space to type some text */
   height: 5em;
-
-}
-  
-.button {
-  /* Align buttons with the text fields */
-  padding-left: 90px; /* same size as the label elements */
 }
   
 button {
   /* This extra margin represent roughly the same space as the space
   between the labels and their text fields */
-  margin-left: 0.5em;
-  width: 418px;
-  background-color: #c5b4e3 ;
+  margin:auto;
+}
+
+.container {
+  justify-content: center;
 
 }
-  
