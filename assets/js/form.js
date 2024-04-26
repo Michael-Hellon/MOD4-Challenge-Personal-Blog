@@ -1,89 +1,90 @@
-/*
-WHEN I submit the form,
-THEN blog post data is stored to localStorage.
-WHEN the form submits,
-THEN I am redirected to the posts page.
-WHEN I enter try to submit a form without a username, title, or content,
-THEN I am presented with a message that prompts me to complete the form.
-WHEN I view the posts page,
-THEN I am presented with a header, with a light mode/dark mode toggle, and a "Back" button.
-*/
+document.addEventListener("DOMContentLoaded", function() {
+  const blogForm = document.getElementById("blog-form");
+  if (!blogForm) {
+      console.log("Form not found");
+      return;
+  }
+
+/* This JS page is used to set and get the blogArticle obj to Local storage.
+This page also checks that input space are filled in and not left emptied.    
 
 /* declaring variables to save the object methods to */
 const userNameInput = document.querySelector('#userName');
 const blogTitleInput = document.querySelector('#blogTitle');
 const blogContentInput = document.querySelector('#blogContent');
 const submitButton = document.querySelector('#submit');
-const sendBlog =document.querySelector('#sendIt');
+const msgSec = document.querySelector('#msg');
+const backButton = document.getElementById("#back");
+
 
 const userNameSpan = document.querySelector('#userName');
 const blogTitleSpan = document.querySelector('#blogTitle');
 const blogContentSpan = document.querySelector('#blogContent');
 
-// // from 4-24 Local storage obj
-// submitButton.addEventListener('submit', function(event) {
-//   event.preventDefault();
+renderLastBlog();
 
-  // TODO: Create user object from submission
-//   const blogAuthor = {
-//     user: userName.value.trim(),
-//     title: blogTitle.value.trim(),
-//     content: blogContent.value.trim(),
-//   };
-
-// // TODO: Set new submission to local storage
-//   const blogUser = JSON.stringify(blogAuthor);
-//   localStorage.setItem("blogAuthor", blogUser);
-// });
-
-renderLastRegistered();
-
+// returns error message if inputs spaces are left empty
 function displayBlog(type, message) {
-    sendBlog.textContent = message;
-    sendBlog.setAttribute('class', type);
+  msgSec.textContent = message;
+  msgSec.setAttribute('class', type);
 }
 
-// retrieves blog data and renders it to blog page
-function renderLastRegistered() {
-    let userName = localStorage.getItem('userName');
-    let blogTitle = localStorage.getItem('blogTitle');
-    let blogContent = localStorage.getItem('blogContent');
+// this will render the blog entered to the blog.html
+function renderLastBlog() {
+  const userName = localStorage.getItem('userName');
+  const blogTitle = localStorage.getItem('blogTitle');
+  const blogContent = localStorage.getItem('blogContent');
 
-    if (!userName || !blogTitle || !blogContent) return;
-    userNameSpan.textContent = userName;
-    blogTitleSpan.textContent = blogTitle;
-    blogContentSpan.textContent = blogContent;
+  /* checks local storage to ensure the variables are not empty. If they are NOT-empty
+  it updates the html elements (displays the blogArticles on the blog screen). If they
+  are empty it stops the code execution and does not display anything (because the 
+  blogArticle is empty). 
+  */
+  if (!userName || !blogTitle || !blogContent) return;
+  userNameSpan.textContent = userName;
+  blogTitleSpan.textContent = blogTitle;
+  blogContentSpan.textContent = blogContent;
 }
 
+submitButton.addEventListener('click', function(event) {
+  event.preventDefault();
 
-submitButton.addEventListener('submit', function (event) {
-    event.preventDefault();
+  const userName = document.querySelector('#userName').value;
+  const blogTitle = document.querySelector('#blogTitle').value;
+  const blogContent = document.querySelector('#blogContent').value;
 
-    const userName = document.querySelector('#userName').value;
-    const blogTitle = document.querySelector('#blogTitle').value;
-    const blogContent = document.querySelector('#blogContent').value;
-  
-    if (userName === '') {
-      displayMessage('error', 'User Name cannot be blank');
-    } else if (blogTitle === '') {
-      displayMessage('error', 'Blog Title cannot be blank');
-    } else if (blogContent === '') {
-        displayMessage('error', 'Blog Content cannot be blank');
-    } else {
-      displayMessage('success', 'Blog created successfully!!!');
+  /* checks that the input variables are not empty before sending to local storage. 
+  If they are empty it returns an error message. If not empty returns a Success message.
+  */
 
-      // localStorage.setItem('userName', userName);
-      // localStorage.setItem('blogTitle', blogTitle);
-      // localStorage.setItem('blogContent', blogContent);
+  if (userName === '') {
+    displayBlog('error', 'User Name cannot be blank');
+  } else if (blogTitle === '') {
+    displayBlog('error', 'Blog Title cannot be blank');
+  } else if (blogContent === '') {
+    displayBlog('error', 'Blog Content cannot be blank');
+  } else {
+    displayBlog('success', 'Blog created successfully!!!');
 
-      const blogAuthor = {
-        user: userName.value.trim(),
-        title: blogTitle.value.trim(),
-        content: blogContent.value.trim(),
-      };
-    
-    // TODO: Set new submission to local storage
-      const blogUser = JSON.stringify(blogAuthor);
-      localStorage.setItem("blogAuthor", blogUser);
 
-}});
+  // creates blogArticle obj from submission - 
+  const blogArticle = {
+    user: userNameInput.value.trim(),
+    title: blogTitleInput.value.trim(),
+    content: blogContentInput.value.trim(),
+  };
+
+  // TODO: Set new submission to local storage
+  const jsonUser = JSON.stringify(blogArticle);
+    // build the blogArticleArray
+  blogArray.push(blogArticle);
+  localStorage.setItem("blogArticle", jsonUser);
+
+  // takes you to the blog.html page
+  window.location.href = "blog.html";
+
+  renderLastBlog();
+ }
+});
+
+})

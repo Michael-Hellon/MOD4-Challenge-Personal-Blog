@@ -14,6 +14,7 @@ header {
   background-size: 100%;
   background-position: center;
   color: whitesmoke;
+  margin-top: -35px;
 } 
 header { 
   font-size: 25px;
@@ -21,6 +22,10 @@ header {
 
 header button {
   width: 100px;
+}
+
+h1 {
+  font-size: 70px;
 }
 
 .dark-mode {

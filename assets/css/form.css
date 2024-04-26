@@ -15,17 +15,17 @@ label {
   display: inline-block;
   justify-items: left;
   min-width: 100px;
-  margin:10px;
+  margin-left:10px;
 }
 .container .input {
  
   margin:auto;
-  padding-left: 50px;
+  padding-left: 5%;
 }
   
 input, text{
   /* To make sure that all text fields have the same font settings
-  By default, textareas have a monospace font */
+  By default, text areas have a monospace font */
   font: 1em sans-serif;
   /* Uniform text field size */
   width: 300px;
@@ -37,16 +37,14 @@ input, text{
   
 input:focus, text:focus {
   /* Additional highlight for focused elements */
-  border-color: chartreuse;
-  justify-items: right;
+   justify-items: right;
   background-color: whitesmoke ;
 }
 
-input[type=submit] {
+button[id=submit] {
   margin-top: 1.5rem;
-  margin-left: 88px;
-  background-color: blueviolet;
- 
+  background-color: purple;
+  
   text-align: center;
 }
   
@@ -56,14 +54,16 @@ text {
   /* Provide space to type some text */
   height: 5em;
 }
-  
+
 button {
   /* This extra margin represent roughly the same space as the space
   between the labels and their text fields */
-  margin:auto;
-}
+  width: 300px;
+  background-color: #c5b4e3 ;
+ }
+
 
 .container {
   justify-content: center;
-
 }
+

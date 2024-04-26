@@ -1,14 +1,8 @@
-/*
-
-common to both pages 
-
-light and dark mode
-
-common.js / function element for both pages // qs for both
-
-*/
-
+// dark mode function
 function myFunction() {
    var element = document.body;
    element.classList.toggle("dark-mode");
 }
+backButton.addEventListener("click", () => {
+   window.location.href = "index.html"; // Navigate back to index.html
+});
