@@ -77,7 +77,7 @@ submitButton.addEventListener('click', function(event) {
   // TODO: Set new submission to local storage
   const jsonUser = JSON.stringify(blogArticle);
     // build the blogArticleArray
-  blogArray.push(blogArticle);
+ 
   localStorage.setItem("blogArticle", jsonUser);
 
   // takes you to the blog.html page
